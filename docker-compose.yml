@@ -3,3 +3,5 @@ services:
   mybot:
     build:
       context: .
+    ports:
+      - "5555:5555"
