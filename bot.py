@@ -23,7 +23,7 @@ from telegram.constants import ParseMode, ChatAction
 
 import yaml
 
-with open("config.yml", 'r') as f:
+with open("/app/config.yml", 'r') as f:
     config_yaml = yaml.safe_load(f)
 
 telegram_token = config_yaml["telegram_token"]

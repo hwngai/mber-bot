@@ -1,11 +1,12 @@
+
 FROM python:3.9
 
-COPY requirements.txt /requirements.txt
-COPY config.yml /config.yml
+WORKDIR /app
 
-RUN python3.9 -m pip install --upgrade pip
-RUN python3.9 -m pip install -r requirements.txt
+COPY requirements.txt .
 
-COPY bot.py /bot.py
+RUN pip install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT ["python", "bot.py"]
+COPY . .
+
+CMD ["python", "bot.py"]
